@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <!-- Begin Font awsome lib -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- End font awsome lib -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>E-Com</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light  shadow-lg">
+        <a href="#" class="nav-link active text-justify text-center pl-5 pr-5"><img src="images/ecom.png" width="100px"
+                height="30px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon  rounded"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav textnav ">
+                <li class="nav-item active mr-4 ">
+                    <a class="nav-link" href="#"> Acceuil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mr-4 ">
+                    <a class="nav-link" href="#service">Service</a>
+                </li>
+                <li class="nav-item mr-4 ">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item mr-4 ">
+                    <a class="nav-link " href="#">Photos</a>
+                </li>
+            </ul>
+
+
+
+        </div>
+        <div class="panier " style="margin-right:20px">
+            <form class="d-flex ">
+
+                <a href="#"  class="btn btn-outline-dark  position-relative" data-bs-toggle="modal" data-bs-target="#panierModal"><i
+                        class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            1
+                            <span class="visually-hidden">unread messages</span>
+                          </span>
+                        </a>
+                <!-- modal panier -->
+                <!-- Modal -->
+                <div class="modal fade" id="panierModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="panierModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="panierModalLabel"><i class="fas fa-shopping-cart"></i> Votre Panier</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="  table-responsive-lg table-hover">
+                                    <table class="table  mb-0">
+                                        <thead class="thead">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Produit</th>
+                                                <th>Quantité</th>
+                                                <th>Prix</th>
+                                                <th>Action</th>
+                                             
+    
+                                            </tr>
+                                            
+                                        </thead>
+                                        <tbody id="tableProduits"> 
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Banane</td>
+                                                <td>1</td>
+                                                <td>100.00 DA</td>
+                                                <td><button class="btn btn-sm btn-success"><i class="fas fa-check"></i></button><button class="btn btn-sm btn-danger"> <i class="fas fa-times"> </i></button></td>
+                                                
+                                                
+    
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Fraise</td>
+                                                <td>1</td>
+                                                <td>300.00 DA</td>
+                                                <td><button class="btn btn-sm btn-success"><i class="fas fa-check"></i></button><button class="btn btn-sm btn-danger"> <i class="fas fa-times"> </i></button></td>
+                                                
+                                                
+    
+                                            </tr>
+
+                                            
+    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i></button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin modal  -->
+            </form>
+        </div>
+    </nav>
+    <!--fin navbar  -->
+    <main>
+       
+        <div class="container">
+            <div class="produit row " id="produits">
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JS here -->
+    <script src="js/popper.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/mdb.min.js"></script> -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
