@@ -103,13 +103,50 @@
         </div>
     </nav>
     <!--fin navbar  -->
-    <main>
-          
+    <main class="p-3">
         <div class="container">
             <h1  class="mt-3 h1 text-black-50" ><i class="fas fa-list-ul"></i> Nos Produits:</h1>
             <div class="produit row " id="produits">
 
             </div>
+        </div>
+
+        <div class="container p-3 mt-5 mb-6 shadow">
+            <h1 class="mt-3 h1 text-black-50"><i class="fas fa-edit"></i> Ajouter Produit</h1>
+            <form class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <label for="inputNom" class="form-label">Nom du produit</label>
+                  <input type="text" class="form-control" id="inputNom" name="inputNom" placeholder="Chocolat">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPrix" class="form-label"><i class="fas fa-dollar-sign"></i> Prix du produit (DA)</label>
+                  <input type="number" class="form-control" id="inputPrix"name="inputPrix" placeholder="1000.00">
+                </div>
+                <div class="col-6">
+                  <label for="inputQte" class="form-label">Quantité </label>
+                  <input type="number" class="form-control" id="inputQte"name="inputQte" placeholder="01">
+                </div>
+                <div class="col-6">
+                    <label for="inputimg" class="form-label"><i class="fas fa-images"></i> Importer Image </label>
+                    <input type="file" class="form-control" id="inputImg" name="inputImg" >
+                  </div>
+                <div class="col-12">
+                    <label for="txtDesc" class="form-label"><i class="fas fa-file-alt"></i> Description</label>
+                    <textarea class="form-control" id="txtDesc" rows="3"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div>
+                
+                  <button type="submit" class="btn btn-primary " id="creep" onclick="creep()"  >Ajouter</button>
+                
+              </form>
         </div>
 
     </main>

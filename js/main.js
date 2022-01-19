@@ -1,6 +1,7 @@
 var noms=["Banane","Fraise","Kiwi","Orange","Melon","Tomate","Pomme","Mangue","Viande"];
 var prices=[100,120,300,440,110,111,458,458,744];
 var images=[1,2,3,4,5,6,7,8,9];
+var descriptions=["Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content."];
 var paniers=[];
 var produits=[];
 var htmlpanier = "";
@@ -11,11 +12,13 @@ for (let i = 0; i < noms.length; i++) {
     const nom=noms[i];
     const prix=prices[i];
     const image=images[i];
-
+    const desc=descriptions[i];
     var produit={
+        id:i,
         nom:nom,
         prix:prix,
         image:image,
+        description:desc,
         qte:1
     };
 
@@ -27,11 +30,11 @@ for (let i = 0; i < noms.length; i++) {
      height="150px">
      <div class="card-body">
        <h5 class="card-title">${nom}</h5>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+       <p class="card-text">${desc}</p>
        <span class="card-text" style="font-weight: bolder;"> ${prix}.00 DA</span>  
        
-       <a href="#" style='margin-left:57px' class="btn btn-success" onclick="ajoutP(${i})"><i class="fas fa-cart-plus"></i></a>
-       <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-heart"></i></a>
+       <a  style='margin-left:57px' class="btn btn-success" onclick="ajoutP(${i})"><i class="fas fa-cart-plus"></i></a>
+       <a  class="btn btn-outline-danger btn-rounded"><i class="fas fa-heart"></i></a>
      </div>
    </div>`;
     
@@ -42,21 +45,87 @@ document.getElementById("produits").innerHTML=htmlproduit;
 
 
 function ajoutP(i){
-  console.log("avant le push"+i);
-  paniers.push(produits[i]);
- console.log("apres le push"+i);
-htmlpanier+=`<tr>
+  const found = paniers.find(e=> e.id == i)
+  
+  if (paniers.includes(produits[i])) {
+    console.log("bloc if");
+    console.log(found);
+    found.qte++; 
+      htmlpanier="";
+      tablePanier(i);
+    
+  } else {
+    console.log("bloc else");
+     paniers.push(produits[i]);
+     htmlpanier="";
+     tablePanier(i);
+
+
+// htmlpanier+=`<tr>
+// <td>${i}</td>
+// <td>${produits[i].nom}</td>
+// <td id="qte">${produits[i].qte}</td>
+// <td>${produits[i].prix}.00 DA</td>
+// <td>
+// <button class="btn btn-sm btn-success"><i class="fas fa-check"></i></button>
+// <button class="btn btn-sm btn-danger"> <i class="fas fa-times"> </i></button>
+// </td>
+// </tr> `;
+
+  }
+ 
+
+
+// document.getElementById("tableProduits").innerHTML=htmlpanier;
+// document.getElementById("cpt").innerText=paniers.length;
+}
+
+
+function tablePanier(i){
+  for (let i = 0; i < paniers.length; i++) {
+   
+     htmlpanier+=`<tr>
 <td>${i}</td>
-<td>${produits[i].nom}</td>
-<td>${produits[i].qte}</td>
-<td>${produits[i].prix}.00 DA</td>
+<td>${paniers[i].nom}</td>
+<td id="qte">${paniers[i].qte}</td>
+<td>${paniers[i].prix}.00 DA</td>
 <td>
 <button class="btn btn-sm btn-success"><i class="fas fa-check"></i></button>
-<button class="btn btn-sm btn-danger"> <i class="fas fa-times"> </i></button>
+<button class="btn btn-sm btn-danger" onclick="supp(${i})"> <i class="fas fa-times"> </i></button>
 </td>
 </tr> `;
-document.getElementById("tableProduits").innerHTML=htmlpanier;
-document.getElementById("cpt").innerText=paniers.length;
+  }
+  document.getElementById("tableProduits").innerHTML=htmlpanier;
+  document.getElementById("cpt").innerText=paniers.length;
+}
+
+function supp(i){
+paniers.splice(i, 1);
+htmlpanier="";
+tablePanier(i);
+}
+
+var btncree=document.getElementById("creep");
+btncree.onclick=function(){
+  console.log("btn click");
+  const nom=getElementById("inputNom").value;
+  const prix=getElementById("inputPrix").value;
+  const qte=getElementById("inputQte").value;
+  const image=getElementById("inputImg").value;
+  const desc=getElementById("txtDesc").value;
+  const id=produits.length
+  noms.push(nom);
+
+  console.log(noms);
+//   produit={
+//     id:id,
+//     nom:nom,
+//     prix:prix,
+//     image:image,
+//     description:desc,
+//     qte:qte
+// };
+//   produits.push(produit);
 }
 
 
