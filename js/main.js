@@ -4,6 +4,30 @@ var images=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.j
 var descriptions=["Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content.","Some quick example text to build on the card title and make up the bulk of the card's content."];
 var paniers=[];
 var produits=[];
+var users=[];
+
+
+
+var user1= {
+  username:"yacine",
+  email:"yacine@gmail.com",
+  password:"yacine"
+};
+var user2= {
+  username:"fawzi",
+  email:"fawzi@gmail.com",
+  password:"password2"
+};
+var user3= {
+  username:"sofiane",
+  email:"sofiane@gmail.com",
+  password:"password3"
+};
+users.push(user1);
+users.push(user2);
+users.push(user3);
+
+
 var htmlpanier = "";
 
 var htmlproduit = "";
@@ -58,6 +82,7 @@ function ajoutP(i){
     
   } else {
     console.log("bloc else");
+    produits[i].qte=1;
      paniers.push(produits[i]);
      htmlpanier="";
      tablePanier(i);
@@ -158,16 +183,28 @@ var btncree=document.getElementById("creep");
 btncree.onclick=function(e){
   e.preventDefault();
   console.log("btn click");
+
+  
   const nom=document.getElementById("inputNom").value;
   const prix=document.getElementById("inputPrix").value;
   const qte=document.getElementById("inputQte").value;
   const image=document.getElementById("inputImg").value;
   const desc=document.getElementById("txtDesc").value;
   const id=produits.length;
+  const check =document.getElementById("gridCheck").checked;
   var path =image.split(`fakepath\\`);
   const img =path[1];
-
-  console.log(img);
+  
+   console.log(check);
+   if (!check) {
+    alert("Veiller cochz le checkbox");
+   }
+   else if(!nom || !prix || !qte || !image || !desc ){
+    alert("Veiller remplir les champs vide");
+         
+    }
+    else{
+      console.log(img);
 
   noms.push(nom);
   prices.push(prix);
@@ -198,7 +235,9 @@ btncree.onclick=function(e){
     <a  class="btn btn-outline-danger btn-rounded"><i class="fas fa-heart"></i></a>
   </div>
 </div>`;
-document.getElementById("produits").innerHTML=htmlproduit;
+document.getElementById("produits").innerHTML=htmlproduit; 
+    }
+ 
 
 }
 
@@ -220,6 +259,25 @@ document.getElementById("produits").innerHTML=htmlproduit;
 
 
 
+   var signup=document.getElementById("signup");
+  function cnx(email ,pw){
+   console.log("cnx");
+  const found= users.find(e=> e.email === email && e.password === pw)
+   if (found) {
+    //  alert("connecté avec succès");
+    window.open("user-profile.html");
+   } else {
+    alert("email ou mot de passe incorrect");
+   }
+  }
 
+  signup.onclick=function(e){
+    e.preventDefault();
+    console.log("onclick");
+    var email=document.getElementById("emailInput").value;
+    var pw=document.getElementById("passwordlInput").value;
+   
+    cnx(email ,pw);
+    
 
-
+  }

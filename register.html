@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Begin Font awsome lib -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- End font awsome lib -->
+    <link rel="stylesheet" href="css/register.css">
+    <title>Register</title>
+</head>
+
+<body>
+
+
+<div id="alerte"></div>
+    <div>
+        <div class="style-form">
+            <form class="form-register" id="registerForm" name="registerForm">
+                <img class="mx-auto d-block m-3" src="images/ecom.png" width="250px" hieght="300px">
+                <h1 class="h3 mb-3 font-weight-normal  text-center">Inscrivez-vous</h1>
+                <div class="row">
+                    <div class="col-12  col-md-6 ">
+                        <div class="form-group">
+                            <label for="nom" class="cols-sm-2 control-label"><i class="fa fa-user fa"
+                                    aria-hidden="true"></i> Nom :</label>
+                            <div class="cols-sm-10 ">
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" name="nom" id="nom"
+                                        placeholder="Saisissez votre nom " />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12  col-md-6 ">
+                        <div class="form-group">
+                            <label for="prenom" class="cols-sm-2 control-label"><i class="fa fa-user fa"
+                                    aria-hidden="true"></i> Prénom :</label>
+                            <div class="cols-sm-10 ">
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" name="prenom" id="prenom"
+                                        placeholder="Saisissez votre prénom" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12  col-md-6 mt-3 ">
+                        <div class="form-group">
+                            <label for="sexe" class="cols-sm-2 control-label"><i class="fas fa-venus-mars"></i> Sexe
+                                :</label>
+                            <div class="cols-sm-10  ">
+                                <div class="input-group">
+                                    <select class="form-control" name="sexe" id="sexe"
+                                        aria-placeholder="Choisissez votre sexe ">
+
+                                        <option value="chose" selected disabled>Selectionner votre sexe </option>
+                                        <option value="homme">Homme</option>
+                                        <option value="femme">Femme</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 mt-3">
+
+                        <div class="form-group">
+                            <label for="date" class="cols-sm-2 control-label"><i class="fas fa-calendar-alt"></i> Date
+                                de naissance :</label>
+                            <div class="cols-sm-10 ">
+                                <div class="input-group">
+
+                                    <input type="date" class="form-control" name="date" id="date"
+                                        placeholder="jj/mm/aaaa" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-12 col-md-6 mt-3">
+
+                        <div class="form-group">
+                            <label for="adresse" class="cols-sm-2 control-label"><i class="fas fa-map"></i> Adresse
+                                :</label>
+                            <div class="cols-sm-10 ">
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" name="adresse" id="adresse"
+                                        placeholder="Saisissez votre adresse" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-12  col-md-6 mt-3">
+                        <div class="form-group">
+                            <label for="tel" class="cols-sm-2 control-label"><i class="fas fa-phone-alt"></i> Téléphone
+                                :</label>
+                            <div class="cols-sm-10 ">
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" minlength="9" maxlength="14" name="tel"
+                                        id="tel" placeholder="Saisissez votre numéro de tel" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-12 col-md-6 mt-3">
+
+                        <div class="form-group ">
+                            <label for="username" class="cols-sm-2 control-label"><i class="fas fa-user-circle"></i> Nom
+                                d'utilisateur :</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" name="username" id="username"
+                                        placeholder="Username001" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mt-3">
+                        <div class="form-group">
+                            <label for="email" class="cols-sm-2 control-label"><i class="fa fa-envelope fa"
+                                    aria-hidden="true"></i> Votre E-mail :</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Saisissez votre E-mail" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-12 col-md-6 mt-2">
+                        <div class="form-group">
+                            <label for="password" class="cols-sm-2 control-label"><i class="fa fa-lock fa-lg"
+                                    aria-hidden="true"></i> Mot de passe :</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+
+                                    <input type="password" class="form-control" name="password" id="password"
+                                        placeholder="Entrez votre mot de passe" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col col-md-6 mt-2">
+
+
+                        <div class="form-group">
+                            <label for="confirm" class="cols-sm-2 control-label"><i class="fa fa-lock fa-lg"
+                                    aria-hidden="true"></i> Confirmation du mot de passe :</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group p ">
+
+                                    <input type="password" class="form-control" name="confirm" id="confirm"
+                                        placeholder="Confirmez votre mot de passe" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <input class="btn btn-lg btn-primary  mx-auto float- " type="submit" name="login" id="login"
+                        value="S'inscrire ">
+                </div>
+                <div class="mb-1 mt-3 text-center col-12">
+                    <small><a href="index.html">Se connecter</a> | </small>
+                    <small><a href="index.html">Accueil</a></small>
+                </div>
+                <p class="mt-2 mb-3 text-muted text-center">E-COM &copy;
+                    <script>var date = new Date(); document.write(date.getFullYear());</script>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JS here -->
+    <script src="js/popper.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="module" src="js/register.js"></script>
+</body>
+
+</html>

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Begin Font awsome lib -->
     <link rel="stylesheet" href="css/all.css">
     <!-- End font awsome lib -->
@@ -44,16 +44,81 @@
 
 
         </div>
-        <div class="panier " style="margin-right:20px">
+
+        <!-- debut Login -->
+        <div class="login mx-2">
             <form class="d-flex ">
 
-                <a href="#"  class="btn btn-outline-dark  position-relative" data-bs-toggle="modal" data-bs-target="#panierModal"><i
-                        class="fas fa-shopping-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cpt">
-                            
-                            <span class="visually-hidden">unread messages</span>
-                          </span>
-                        </a>
+                <a href="#" class="btn btn-outline-primary  position-relative" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+                <!-- modal login -->
+                <!-- Modal -->
+                <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">
+                                    <i class="fas fa-sign-in-alt">
+                                    </i> Login
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <i class="fas fa-user-circle"
+                                    style="width: 300px; height:200px;margin-left: 80px; color: rgb(48, 98, 179);"> </i>
+                                <h2 class="text-black-50 text-center ">Connectez Vous</h2>
+                                <div class="loginModam p-lg-3">
+
+                                    <form class="p-4 p-md-5 border rounded-3 bg-light">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="emailInput"
+                                                placeholder="name@example.com">
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" id="passwordlInput"
+                                                placeholder="Password">
+                                            <label for="floatingPassword">Password</label>
+                                        </div>
+                                        <div class="checkbox mb-3">
+                                            <label>
+                                                <input type="checkbox" value="remember-me"> Remember me
+                                            </label>
+                                        </div>
+                                        <button class="w-100 btn btn-lg btn-primary"  id="signup">Sign up</button>
+                                        <hr class="my-4">
+                                        <small class="text-muted">Si vous n'avez pas de compte <a
+                                                href="register.html">inscrivez-vous</a> ici.</small>
+                                    </form>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- fin modal  -->
+            </form>
+        </div>
+        <!-- fin login -->
+
+        <!-- panier -->
+        <div class="panier " style="margin-right:10px">
+            <form class="d-flex ">
+
+                <a href="#" class="btn btn-outline-dark  position-relative" data-bs-toggle="modal"
+                    data-bs-target="#panierModal"><i class="fas fa-shopping-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="cpt">
+
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </a>
                 <!-- modal panier -->
                 <!-- Modal -->
                 <div class="modal fade" id="panierModal" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -61,12 +126,13 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="panierModalLabel"><i class="fas fa-shopping-cart"></i> Votre Panier</h5>
+                                <h5 class="modal-title" id="panierModalLabel"><i class="fas fa-shopping-cart"></i> Votre
+                                    Panier</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="  table-responsive-lg table-hover">
+                                <div class="  table table-responsive-lg table-hover">
                                     <table class="table  mb-0">
                                         <thead class="thead">
                                             <tr>
@@ -75,16 +141,16 @@
                                                 <th>Quantité</th>
                                                 <th>Prix</th>
                                                 <th>Action</th>
-                                             
-    
+
+
                                             </tr>
-                                            
+
                                         </thead>
-                                        <tbody id="tableProduits"> 
+                                        <tbody id="tableProduits">
 
 
-                                            
-    
+
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -92,7 +158,7 @@
                             <div class="modal-footer">
                                 <button class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i></button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                
+
 
                             </div>
                         </div>
@@ -101,11 +167,13 @@
                 <!-- fin modal  -->
             </form>
         </div>
+        <!-- fin panier -->
+
     </nav>
     <!--fin navbar  -->
     <main class="p-3">
         <div class="container">
-            <h1  class="mt-3 h1 text-black-50" ><i class="fas fa-list-ul"></i> Nos Produits:</h1>
+            <h1 class="mt-3 h1 text-black-50"><i class="fas fa-list-ul"></i> Nos Produits:</h1>
             <div class="produit row " id="produits">
 
             </div>
@@ -113,40 +181,42 @@
 
         <div class="container p-3 mt-5 mb-6 shadow">
             <h1 class="mt-3 h1 text-black-50"><i class="fas fa-edit"></i> Ajouter Produit</h1>
-            <form name="formProduit" class="row g-3 mt-3" >
+            <form name="formProduit" class="row g-3 mt-3">
                 <div class="col col-md-6 col-sm-12">
-                  <label for="inputNom" class="form-label">Nom du produit</label>
-                  <input type="text" class="form-control" id="inputNom" name="inputNom" placeholder="Chocolat">
+                    <label for="inputNom" class="form-label">Nom du produit</label>
+                    <input type="text" class="form-control" id="inputNom" name="inputNom" placeholder="Chocolat">
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <label for="inputPrix" class="form-label"><i class="fas fa-dollar-sign"></i> Prix du produit (DA)</label>
-                  <input type="number" class="form-control" id="inputPrix"name="inputPrix" placeholder="1000.00">
+                    <label for="inputPrix" class="form-label"><i class="fas fa-dollar-sign"></i> Prix du produit
+                        (DA)</label>
+                    <input type="number" class="form-control" id="inputPrix" name="inputPrix" placeholder="1000.00">
                 </div>
                 <div class="col col-md-6 col-sm-12">
-                  <label for="inputQte" class="form-label">Quantité </label>
-                  <input type="number" class="form-control" id="inputQte"name="inputQte" placeholder="01">
+                    <label for="inputQte" class="form-label">Quantité </label>
+                    <input type="number" class="form-control" id="inputQte" name="inputQte" placeholder="01">
                 </div>
                 <div class="col col-md-6 col-sm-12">
                     <label for="inputimg" class="form-label"><i class="fas fa-images"></i> Importer Image </label>
-                    <input type="file" class="form-control" id="inputImg" name="inputImg"  accept="images/png, images/jpeg">
-                  </div>
+                    <input type="file" class="form-control" id="inputImg" name="inputImg"
+                        accept="images/png, images/jpeg">
+                </div>
                 <div class="col-12">
                     <label for="txtDesc" class="form-label"><i class="fas fa-sticky-note"></i> Description</label>
                     <textarea class="form-control" id="txtDesc" name="txtDesc" rows="3"></textarea>
                 </div>
 
                 <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
-                  </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Check me out
+                        </label>
+                    </div>
                 </div>
-                
-                  <button type="submit" class="btn btn-primary " id="creep"  >Ajouter</button>
-                
-              </form>
+
+                <button type="submit" class="btn btn-primary " id="creep">Ajouter</button>
+
+            </form>
         </div>
 
     </main>
